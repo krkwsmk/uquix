@@ -1,0 +1,280 @@
+{
+    "Accept": {
+        "isalways": true,
+        "israndomplace": false,
+        "type": "multi",
+        "repeat": "{NUM->0_10}",
+        "items": [
+            "application/json", "application/dns-json", "text/html", "application/xml", "text/plain", "application/javascript", "application/octet-stream",
+            "application/x-www-form-urlencoded", "multipart/form-data", "text/css", "text/csv", "text/markdown", "text/calendar", "text/javascript", "image/png",
+            "image/jpeg", "image/gif", "image/webp", "image/svg+xml", "audio/mpeg", "audio/ogg", "audio/wav", "video/mp4", "video/webm", "video/ogg",
+            "application/ld+json", "application/vnd.api+json", "application/problem+json", "application/problem+xml", "application/atom+xml",
+            "application/rss+xml", "application/pdf", "application/zip", "application/x-tar", "*/*"
+        ]
+    },
+    "User-Agent": {
+        "isalways": true,
+        "type": "simple",
+        "repeat": "{[0, 1, 20]}",
+        "items": ["UQUIX/1.0.0 "]
+    },
+    "Accept-Encoding": {
+        "isalways": true,
+        "type": "multi",
+        "sep": "|",
+        "israndom_count": false,
+        "count": "{[0,1,2,10,50,100]}",
+        "isunique": false,
+        "items": ["gzip","compress", "deflate", "br", "identity", "*"]
+    },
+    "Connection": {
+        "isalways": true,
+        "israndomplace": false,
+        "type": "simple",
+        "items": ["keep-alive", "close"]
+    },
+    "Accept-Language": {
+        "isalways": true,
+        "type": "multi",
+        "israndomplace": false,
+        "israndom_count": false,
+        "count": "{NUM->3_MAX}",
+        "isunique": true,
+        "repeat": "{[0, 1]}",
+        "items": ["{[en,EN,fr,Es,eS,ES]}{[-,|,., ,]}US,en;q={[0,9999999999999,-99999999999]}.{NUM->0_9}", "es;q=0.6.{NUM->10000_999999}", "fr;q=0.7", "en;q=0.8", "es-ES,es;q=0.8", "fr-FR,fr;q=0.7", "en;q=0.5", ""]
+    },
+    "Cache-Control": {
+        "type": "simple",
+        "items": ["no-cache", "max-age=0", "no-store", "must-revalidate", ""]
+    },
+    "Upgrade-Insecure-Requests": {
+        "israndomplace": false,
+        "type": "simple",
+        "items": ["1", ""]
+    },
+    "DNT": {
+        "isalways": true,
+        "type": "simple",
+        "items": ["{NUM->0_1}"]
+    },
+    "Pragma": {
+        "type": "simple",
+        "items": ["no-cache", ""]
+    },
+    "Referer": {
+        "type": "simple",
+        "is403": true,
+        "items": ["https://www.google.com", "https://www.bing.com", "https://duckduckgo.com", "",
+            "/admin", "/login", "/dashboard", "/administrator", "/admin-panel", "/admin_login", "/cms-admin", "/moderator", "/staff", "/backend", "/root",  
+            "/admin/", "/admin/login", "/admin/dashboard", "/admin/index.php", "/admin.php", "/admin.asp", "/admin.jsp", "/admin.html", "/admin/",  
+            "/Admin", "/ADMIN", "/aDmIn", "/AdMiN",  
+            "/admin123", "/admin-old", "/admin_backup", "/admin_new", "/.admin", "/admin~", "/admin!.", "/admin?", "/admin#", "/admin/", "/admin.",
+            "/admin%20", "/admin%09", "/admin%2e/", "/admin%2f", "/admin%2f%2e%2e%2f",  
+            "/admin/..;/", "/admin/..%2f", "/admin/../", "/admin/%2e%2e/", "/admin/%252e%252e/", "/admin/%2e%2e%2f",  
+            "/api", "/api/v1", "/api/admin", "/api/auth", "/api/login", "/api/user",  
+            "/wp-admin", "/wp-login.php", "/wp-admin/admin.php", "/wp-json", "/wp-content",  
+            "/cpanel", "/whm", "/pma", "/phpmyadmin",  
+            "/admin_old", "/admin_backup", "/backup", "/.admin",  
+            "/admin%2e%2e/", "/admin%20/", "/admin%09/", "/admin%252e%252e/"]
+    },
+    "X-Requested-With": {
+        "type": "simple",
+        "is403": true,
+        "items": ["XMLHttpRequest", "Fetch", ""]
+    },
+    "Forwarded": {
+        "type": "simple",
+        "is403": true,
+        "items": [
+            "for=127.0.0.1; 'proto=http'", "for=localhost; proto=http", "for=192.168.1.1; ''proto=http",
+            "for={NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}",
+            "for={NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}; 'proto=http'; 'by={NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}'",
+            "by={NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}; for={NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}"]
+    },
+    "X-Forwarded-For": {
+        "type": "simple",
+        "is403": true,
+        "items": [
+            "127.0.0.1", "localhost", "192.168.1.1", "1.1.1.1",
+            "{NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}",
+            "{NUM->1_999}.{NUM->256_999}.{NUM->256_999}.{NUM->256_999}"]
+    },
+    "TE": {
+        "type": "simple",
+        "is403": true,
+        "items": ["trailers", "compress", "deflate", "gzip", "chunked"]
+    },
+    "Via": {
+        "type": "simple",
+        "items": [
+            "1.1 proxy-{NUM->1_99}.internal.net",
+            "1.1 gateway{NUM->1_5}.local (Varnish/{NUM->5_7}.{NUM->0_5})",
+            "2.0 edge-{NUM->1_20}.cloud.net",
+            "1.0 {[cache,proxy,node]}-{NUM->1_500}.{[com,net,org]}",
+            "1.0 cache-{NUM->100_999}.cdn-network.com (nginx/{NUM->1_2}.{NUM->0_9}.{NUM->0_9})"]
+    },
+    "Warning": {
+        "type": "simple",
+        "items": ["{[110,111,112,113,199,214,299]} {[Response is stale,Revalidation failed,Heuristic expiration,Miscellaneous warning,Transformation applied,Root is Root and User is User and Admin is Admin :)]}"]
+    },
+    "Content-Type": {
+        "type": "multi",
+        "israndom_count": false,
+        "count": "{NUM->0_10}",
+        "isunique": false,
+        "repeat": 1,
+        "items": [
+            "application/json", "application/dns-json", "text/html", "application/xml", "text/plain", "application/javascript", "application/octet-stream",
+            "application/x-www-form-urlencoded", "multipart/form-data", "text/css", "text/csv", "text/markdown", "text/calendar", "text/javascript", "image/png",
+            "image/jpeg", "image/gif", "image/webp", "image/svg+xml", "audio/mpeg", "audio/ogg", "audio/wav", "video/mp4", "video/webm", "video/ogg",
+            "application/ld+json", "application/vnd.api+json", "application/problem+json", "application/problem+xml", "application/atom+xml",
+            "application/rss+xml", "application/pdf", "application/zip", "application/x-tar", "*/*"]
+    },
+    "Content-Encoding": {
+        "type": "multi",
+        "sep": "",
+        "israndom_count": false,
+        "count": "{[0, 3, MAX]}",
+        "isunique": false,
+        "repeat": "{NUM->0_MAX}",
+        "items": ["gzip","compress", "deflate", "br", "identity", "*"]
+    },
+    "Access-Control-Allow-Origin": {
+        "type": "simple",
+        "items": ["*", "https://www.google.com", "https://www.bing.com", "https://duckduckgo.com"]
+    },
+    "Accept-Charset": {
+        "type": "simple",
+        "items": ["utf-8", "ISO-8859-1", "US-ASCII"]
+    },
+    "X-Forwarded-Host": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "evil.com", "sub.evil.com", ""]
+    },
+    "X-Forwarded-Server": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "evil.com"]
+    },
+    "X-Real-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1", "{NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}"]
+    },
+    "X-Client-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1"]
+    },
+    "X-Remote-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1"]
+    },
+    "X-Remote-Addr": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1"]
+    },
+    "X-Originating-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1", "{NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}"]
+    },
+    "Origin": {
+        "type": "simple",
+        "is403": true,
+        "items": ["https://www.google.com", "https://www.bing.com", "https://duckduckgo.com", "null", ""]
+    },
+    "Host": {
+        "type": "simple",
+        "is403": true,
+        "items": ["localhost", "127.0.0.1", "evil.com", "sub.evil.com", ""]
+    },
+    "CF-Connecting-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1"]
+    },
+    "True-Client-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "localhost", "192.168.1.1", "{NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}"]
+    },
+    "X-WAP-Profile": {
+        "type": "simple",
+        "is403": true,
+        "items": ["http://wap.example.com", "http://wap.evil.com"]
+    },
+    "Transfer-Encoding": {
+        "type": "simple",
+        "is403": true,
+        "items": ["chunked"]
+    },
+    "X-Original-URL": {
+        "type": "simple",
+        "is403": true,
+        "items": ["/"]
+    },
+    "X-Rewrite-URL": {
+        "type": "simple",
+        "is403": true,
+        "items": ["/"]
+    },
+    "X-Custom-IP-Authorization": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1"]
+    },
+    "X-ProxyUser-Ip": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1"]
+    },
+    "X-Forwarded-Proto": {
+        "type": "simple",
+        "is403": true,
+        "items": ["http", "https"]
+    },
+    "X-HTTP-Method-Override": {
+        "type": "simple",
+        "is403": true,
+        "items": ["GET", "POST", "DELETE", "PUT", "PATCH", "TRACE", "CONNECT", "HEAD", "OPTIONS"]
+    },
+    "Client-IP": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1", "{NUM->1_255}.{NUM->0_255}.{NUM->0_255}.{NUM->0_255}"]
+    },
+    "X-Original-Forwarded-For": {
+        "type": "simple",
+        "is403": true,
+        "items": ["127.0.0.1"]
+    },
+    "X-ATT-DeviceId": {
+        "type": "simple",
+        "is403": true,
+        "items": ["GT-P7320"]
+    },
+    "X-Correlation-ID": {
+        "type": "simple",
+        "is403": true,
+        "items": ["testmepls"]
+    },
+    "X-CSRF-Token": {
+        "type": "simple",
+        "is403": true,
+        "items": ["null", "souwperouvvnvnvnnvnvHHHHHFDFERER#@$#$@#$@#$@#$@#$#@$@#$@#$@#$@#$@#$@#$@#$@#$@#$@#$"]
+    },
+    "Authorization": {
+        "type": "simple",
+        "is403": true,
+        "items": ["Basic dXNlcjpwYXqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqNz", "Bearer random_token_here"]
+    },
+    "Proxy-Authorization": {
+        "type": "simple",
+        "is403": true,
+        "items": ["Basic 55555555555555555dXNlcjpwYTNz"]
+    }
+}

