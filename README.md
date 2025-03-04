@@ -16,7 +16,7 @@ UQUIX is out-of-the-box CLI-based ultra-fast Python advanced tool designed to he
 6. **Out-of-the-box Power**: Manipulate headers/values/payloads/positions/repetitions/... instantly.
 7. **Multi-Vector Attacks**: Test multiple attack vectors per request.
 
-## Overview
+## 🎯 Overview
 
 Traditional vulnerability testing by trying every possible method/header/payload variation using tools like Burp Repeater can be extremely time-consuming. UQUIX streamlines this process perfectly with out-of-the-box power by allowing you to:
 
@@ -35,7 +35,7 @@ Traditional vulnerability testing by trying every possible method/header/payload
 
 UQUIX has advanced fully customizable features ensure that you won’t miss any potential bugs/vulns, increasing your chances to uncover hidden vulnerabilities based on server behavior.
 
-## Why UQUIX?
+## 🚀 Why UQUIX?
 
 | Manual Testing Limitations          | UQUIX Advantages                        |
 |-------------------------------------|-----------------------------------------|
@@ -45,7 +45,7 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
 | Single-vector attack                | Simultaneous multi-vulnerability scans  |
 | Partial protocol coverage           | Full HTTPs stack manipulation           |
 
-## Configurations
+## ⚙️ Configurations
 
 1. **Number of Requests Variations Per URL `--random-headers`**:
     *`--random-headers` is the number of times to send the same request but with random headers variations based on headers rules file, and with random payload~
@@ -64,7 +64,7 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
 4. **Analyzing:**
     *Read `docs/analysis_guide.md` to learn how to customize your own vulnerabilities detection logics. Learn to use UQUIX efficiently ;)
 
-## Help Section (Available Options)
+## 📚 Help Section (Available Options)
 
 <details>
 <summary><b>📚 Full Help Documentation (Click to Expand)</b></summary>
@@ -241,7 +241,7 @@ uquix --help
 
 </details>
 
-## Usage Examples
+## 💻 Usage Examples
     
     **To use request manipulator mode use `Response-Xplore`:**
         - *Run with default configs:*
@@ -257,15 +257,15 @@ uquix --help
         - *Example of detailed configs:*
             - `uquix subs-xplore subslist.txt --target-domains target_domains.txt --concurrent-queries 2000 --show-records --timeout 2 --retries 0 --enable-rotate --dns-servers-file resolvers.txt --output-file newsubs_with_A_CNAME.txt --silence`
 
-## Example Screenshot
+## 🖼️ Example Screenshot
 
 ![Screenshot](UQUIX_example.png)
 
-## Requirements
+## 📦 Requirements
     
     Python 3.9+
 
-## Installation
+## ⬇️ Installation
 
 **Clone & Install:**
 
@@ -275,7 +275,7 @@ uquix --help
 
    ```
 
-## Support Me <3
+## ❤️☕ Support Me <3
 
 **If you liked the project and you want to encourage me, you can support me through:**
 - BTC: bc1q3yp6hkx570fl3sp6undnl28dvvg4scwyz823u0
@@ -294,7 +294,7 @@ uquix --help
 - Age: 18                                                      
 - Year: 2025
                                                    
-## WARNINGS
+## ⚠️🚨 WARNINGS
 
 - Please ask for `PERMISSIONS` before testing any web server.  
 - Use this tool `AT YOUR OWN RISK`.                                     
