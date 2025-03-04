@@ -1,10 +1,10 @@
 # UQUIX -> Unexpected Creepy Cruel Requests  
 *Pronounced "You-kwix"*
 
-![Logo](UQUIX_logo.png)
-
 **Ultimate Request Manipulation Toolkit for Uncovering Missed & Hidden Vulnerabilities**  
 *Automate Unlimited Complex Header Attacks - Find What Others Miss*
+
+![Logo](UQUIX_logo.png)
 
 UQUIX is out-of-the-box CLI-based ultra-fast Python advanced tool designed to help bug hunters by automating complex header manipulation scenarios that are impossible to perform manually at scale. UQUIX also comes with lightweight & ultra-fast subdomain enumeration mode via DNS brute-force to help identify additional attack surfaces. UQUIX solves seven critical problems:
 
