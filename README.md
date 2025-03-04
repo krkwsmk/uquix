@@ -1,6 +1,8 @@
 # UQUIX -> Unexpected Creepy Cruel Requests  
 *Pronounced "You-kwix"*
 
+![Logo](UQUIX_logo.png)
+
 **Ultimate Request Manipulation Toolkit for Uncovering Missed & Hidden Vulnerabilities**  
 *Automate Unlimited Complex Header Attacks - Find What Others Miss*
 
