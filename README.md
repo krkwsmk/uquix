@@ -296,8 +296,8 @@ uquix --help
                                                    
 #######################################################################
 
-*WARNING: Please ask for PERMISSIONS before testing any web server.  
-*Use this tool AT YOUR OWN RISK.                                     
-*I'm NOT responsible for any unethical action.                       
+WARNING: Please ask for PERMISSIONS before testing any web server.  
+Use this tool AT YOUR OWN RISK.                                     
+I'm NOT responsible for any unethical action.                       
 
 
