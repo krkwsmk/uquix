@@ -81,6 +81,10 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
         - *Example of detailed configs:*
             - `uquix subs-xplore subslist.txt --target-domains target_domains.txt --concurrent-queries 2000 --show-records --timeout 2 --retries 0 --enable-rotate --dns-servers-file resolvers.txt --output-file newsubs_with_A_CNAME.txt --silence`
 
+## Example Screenshot
+
+![Logo](UQUIX_example.png)
+
 ## Requirements
     
     **[Python 3.9+]
