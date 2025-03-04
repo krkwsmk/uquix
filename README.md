@@ -64,28 +64,8 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
 4. **Analyzing:**
     *Read `docs/analysis_guide.md` to learn how to customize your own vulnerabilities detection logics. Learn to use UQUIX efficiently ;)
 
+## Help Section (Available Options)
 
-## Usage Examples
-    
-    **To use request manipulator mode use `Response-Xplore`:**
-        - *Run with default configs:*
-            - `uquix response-xplore urls.txt`
-        - *Example of detailed configs:*
-            - `uquix response-xplore urls.txt --add-http --add-https --concurrent-requests 1000 --methods all --data-methods post,put --random-agents --random-headers 10 --headers-rules-file 'my_hdrs_rules.json' --random-payload --payloads-file 'my_plds.txt' --ignore-cookies --no-ssl --dns-servers-file resolvers.txt --enable-rotate --dns-retries 0 --req-retries 2 --retries-delay 2 --exp-backoff --dns-timeout 0.5 --req-timeout 6 --ttl-dns-cache 5 --max-redirects-http 3 --max-redirects-https 5 --final-url --less-400 --min-content 50 --max-content 10000 --no-title --analyze-by '(RES_HDRS and RES_HDRS_SIZE) or STATUS or CONTENT or DURATION' --output-file 'output/tested_urls.txt' --output-sorted 'output/sorted_tested_urls.txt' --output-analyze 'output/detected_vulns.txt' --html-dir 'output/html_tested_urls' --no-history`
-    
-    **To use subdomain enumeration via DNS brute-force mode use `Subs-Xplore`:**
-        - *Run with default configs on single target:*
-            - `uquix subs-xplore subslist.txt --target-domain example.com`
-        - *Run with default configs on mutli targets:*
-            - `uquix subs-xplore subslist.txt --target-domains target_domains.txt`
-        - *Example of detailed configs:*
-            - `uquix subs-xplore subslist.txt --target-domains target_domains.txt --concurrent-queries 2000 --show-records --timeout 2 --retries 0 --enable-rotate --dns-servers-file resolvers.txt --output-file newsubs_with_A_CNAME.txt --silence`
-
-## Example Screenshot
-
-![Logo](UQUIX_example.png)
-
-## Help Section
 <details>
 <summary><b>📚 Full Help Documentation (Click to Expand)</b></summary>
 
@@ -261,9 +241,29 @@ uquix --help
 
 </details>
 
+## Usage Examples
+    
+    **To use request manipulator mode use `Response-Xplore`:**
+        - *Run with default configs:*
+            - `uquix response-xplore urls.txt`
+        - *Example of detailed configs:*
+            - `uquix response-xplore urls.txt --add-http --add-https --concurrent-requests 1000 --methods all --data-methods post,put --random-agents --random-headers 10 --headers-rules-file 'my_hdrs_rules.json' --random-payload --payloads-file 'my_plds.txt' --ignore-cookies --no-ssl --dns-servers-file resolvers.txt --enable-rotate --dns-retries 0 --req-retries 2 --retries-delay 2 --exp-backoff --dns-timeout 0.5 --req-timeout 6 --ttl-dns-cache 5 --max-redirects-http 3 --max-redirects-https 5 --final-url --less-400 --min-content 50 --max-content 10000 --no-title --analyze-by '(RES_HDRS and RES_HDRS_SIZE) or STATUS or CONTENT or DURATION' --output-file 'output/tested_urls.txt' --output-sorted 'output/sorted_tested_urls.txt' --output-analyze 'output/detected_vulns.txt' --html-dir 'output/html_tested_urls' --no-history`
+    
+    **To use subdomain enumeration via DNS brute-force mode use `Subs-Xplore`:**
+        - *Run with default configs on single target:*
+            - `uquix subs-xplore subslist.txt --target-domain example.com`
+        - *Run with default configs on mutli targets:*
+            - `uquix subs-xplore subslist.txt --target-domains target_domains.txt`
+        - *Example of detailed configs:*
+            - `uquix subs-xplore subslist.txt --target-domains target_domains.txt --concurrent-queries 2000 --show-records --timeout 2 --retries 0 --enable-rotate --dns-servers-file resolvers.txt --output-file newsubs_with_A_CNAME.txt --silence`
+
+## Example Screenshot
+
+![Screenshot](UQUIX_example.png)
+
 ## Requirements
     
-    **[Python 3.9+]
+    **Python 3.9+
 
 ## Installation
 
@@ -287,12 +287,14 @@ uquix --help
 - TRX: TBa5yB3bLyfZSgxeD1Croue6na2RGcurcY
 - LTC: LTwiigKAUPmTFJZJ6R3qcZagVh4dgqRjxM
 
+
 ################################################################
-# By: Abd Almoen Arafa (0.1Arafa)                              #
-# Age: 18                                                      #
-# Year: 2025                                                   #
+- By: Abd Almoen Arafa (0.1Arafa)                              #
+- Age: 18                                                      #
+- Year: 2025                                                   #
 #######################################################################
-# WARNING: Please ask for PERMISSIONS before testing any web server.  #
-# Use this tool AT YOUR OWN RISK.                                     #
-# I'm NOT responsible for any unethical action.                       #
+- WARNING: Please ask for PERMISSIONS before testing any web server.  #
+- Use this tool AT YOUR OWN RISK.                                     #
+- I'm NOT responsible for any unethical action.                       #
 #######################################################################
+
