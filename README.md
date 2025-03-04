@@ -95,9 +95,10 @@ uquix --help
 ```
 
 **Options**:
+
 **Description:**
-        - Response-Xplore: Sends Unexpected Fully Customizable Requests to Test Server Responses.
-        - Subs-Xplore: Subdomain Enumeration by Resolving Subdomains for a Domain(s) via DNS Brute-force.
+   - Response-Xplore: Sends Unexpected Fully Customizable Requests to Test Server Responses.
+   - Subs-Xplore: Subdomain Enumeration by Resolving Subdomains for a Domain(s) via DNS Brute-force.
 
 **options:**
   - -h, --help            show this help message and exit
