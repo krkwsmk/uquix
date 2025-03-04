@@ -294,10 +294,10 @@ uquix --help
 - Age: 18                                                      
 - Year: 2025
                                                    
-#######################################################################
+## WARNINGS
 
-WARNING: Please ask for PERMISSIONS before testing any web server.  
-Use this tool AT YOUR OWN RISK.                                     
-I'm NOT responsible for any unethical action.                       
+- Please ask for `PERMISSIONS` before testing any web server.  
+- Use this tool `AT YOUR OWN RISK`.                                     
+- I'm `NOT` responsible for any unethical action.                       
 
 
