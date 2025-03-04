@@ -89,7 +89,7 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
 <details>
 <summary><b>📚 Full Help Documentation (Click to Expand)</b></summary>
 
-### Command List
+### Command
 ```bash
 uquix --help
 ```
