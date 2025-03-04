@@ -94,229 +94,170 @@ UQUIX has advanced fully customizable features ensure that you won’t miss any 
 uquix --help
 ```
 
-**Options**:
-
-**Description:**
-   - Response-Xplore: Sends Unexpected Fully Customizable Requests to Test Server Responses.
-   - Subs-Xplore: Subdomain Enumeration by Resolving Subdomains for a Domain(s) via DNS Brute-force.
+**Modes Description:**
+   - Response-Xplore: *Sends Unexpected Fully Customizable Requests to Test Server Responses.
+   - Subs-Xplore: *Subdomain Enumeration by Resolving Subdomains for a Domain(s) via DNS Brute-force.
 
 **options:**
-  - -h, --help            show this help message and exit
+  - -h, --help            *show this help message and exit
 
 **Basic Arguments:**
-  - mode                  Mode ['Response-Xplore', 'Subs-Xplore']. Choose only one mode.
+  - mode                  *Mode ['Response-Xplore', 'Subs-Xplore']. Choose only one mode.
                           Choose 'Response-Xplore' to manipulate HTTPs requests or 'Subs-Xplore' for subdomain enumeration via DNS brute-force.
-  - file                  Path to the URLs file (ex, '/path/to/urls.txt') for 'Response-Xplore' mode.
+  - file                  *Path to the URLs file (ex, '/path/to/urls.txt') for 'Response-Xplore' mode.
                           Path to the subdomains file (ex, '/path/to/subs.txt') for 'Subs-Xplore' mode.
 
 **Subs-Xplore Options:**
-  - --target-domain TARGET_DOMAIN
-                        Target domain to resolve subdomains for, without a protocol (ex, 'example.com')
-  - --target-domains-file TARGET_DOMAINS_FILE
-                        Path to file name that contain target domains without a protocol to resolve subdomains for (ex, 'domains.txt')
-  - --concurrent-queries CONCURRENT_QUERIES
-                        Number of concurrent DNS queries (default: 600)
-  - --show-records        Show 'A' and 'CNAME' records of discovered subdomains (default: False)
-  - --show-only-a         Show only 'A' records of discovered subdomains (default: False)
-  - --show-only-cname     Show only 'CNAME' records of discovered subdomains (default: False)
+  - --target-domain         *Target domain to resolve subdomains for, without a protocol (ex, 'example.com')
+  - --target-domains-file   *Path to file name that contain target domains without a protocol to resolve subdomains for (ex, 'domains.txt')
+  - --concurrent-queries    *Number of concurrent DNS queries (default: 600)
+  - --show-records          *Show 'A' and 'CNAME' records of discovered subdomains (default: False)
+  - --show-only-a           *Show only 'A' records of discovered subdomains (default: False)
+  - --show-only-cname       *Show only 'CNAME' records of discovered subdomains (default: False)
 
 **DNS Options:**
-  - --dns-servers DNS_SERVERS
-                        Custom DNS servers for resolving hostnames, as string comma-separated or as list (ex1, '8.8.8.8,8.8.4.4'.ex2, "['8.8.8.8', '1.1.1.1']")
-  - --dns-servers-file DNS_SERVERS_FILE
-                        Path to a file name containing custom DNS servers for resolving hostnames, one per line (ex, 'resolvers.txt')
-  - --udp-port UDP_PORT   The UDP port to use for DNS queries (default: 53)
-  - --tcp-port TCP_PORT   The TCP port to use for DNS queries (default: 53)
-  - --flags FLAGS         Custom flags for DNS queries (default: 0)
-  - --socket-sbs SOCKET_SBS
-                        Size of the send buffer for sockets, in bytes (default: system-defined)
-  - --socket-rbs SOCKET_RBS
-                        Size of the receive buffer for sockets, in bytes (default: system-defined)
-  - --enable-rotate       Enable DNS server rotation, useful for load balancing (default: False)
-  - --bind-ip-dns BIND_IP_DNS
-                        The local IP to bind for DNS queries (ex, '192.168.1.16')
-  - --net-dev NET_DEV     The network device (interface) to use for DNS queries (ex, 'eth0')
-  - --resolvconf RESOLVCONF
-                        Path to a custom resolv.conf file for DNS configuration (default: '/etc/resolv.conf')
+  - --dns-servers        *Custom DNS servers for resolving hostnames, as string comma-separated or as list (ex1, '8.8.8.8,8.8.4.4'.ex2, "['8.8.8.8', '1.1.1.1']")
+  - --dns-servers-file   *Path to a file name containing custom DNS servers for resolving hostnames, one per line (ex, 'resolvers.txt')
+  - --udp-port           *The UDP port to use for DNS queries (default: 53)
+  - --tcp-port           *The TCP port to use for DNS queries (default: 53)
+  - --flags              *Custom flags for DNS queries (default: 0)
+  - --socket-sbs         *Size of the send buffer for sockets, in bytes (default: system-defined)
+  - --socket-rbs         *Size of the receive buffer for sockets, in bytes (default: system-defined)
+  - --enable-rotate      *Enable DNS server rotation, useful for load balancing (default: False)
+  - --bind-ip-dns        *The local IP to bind for DNS queries (ex, '192.168.1.16')
+  - --net-dev            *The network device (interface) to use for DNS queries (ex, 'eth0')
+  - --resolvconf         *Path to a custom resolv.conf file for DNS configuration (default: '/etc/resolv.conf')
 
 **Timeout & Connection:**
-  - --timeout TIMEOUT     Overall timeout for HTTPs request and timeout for DNS query, in seconds (default: 10.0)
-  - --dns-timeout DNS_TIMEOUT
-                        Timeout for DNS query, in seconds (ex, 5.0)
-  - --req-timeout REQ_TIMEOUT
-                        Overall timeout for HTTPs request, in seconds (ex, 10.0)
-  - --connect-timeout CONNECT_TIMEOUT
-                        Timeout for finding and connecting to the server, including DNS lookup and the initial TCP handshake,
-                        or timeout for waiting for a free connection from the pool if pool connection limits are exceeded, in seconds (default: unlimited)
-  - --sock-connect-timeout SOCK_CONNECT_TIMEOUT
-                        Timeout for TCP handshake, in seconds (default: unlimited)
-  - --sock-read-timeout SOCK_READ_TIMEOUT
-                        Timeout for waiting for the server to send back data, in seconds (default: unlimited)
-  - --keepalive-timeout KEEPALIVE_TIMEOUT
-                        Timeout for idle keep-alive connections, in seconds (default: 30.0)
-  - --concurrent-requests CONCURRENT_REQUESTS
-                        Number of concurrent HTTPs requests (default: 100)
-  - --max-connections MAX_CONNECTIONS
-                        Limit the maximum number of concurrent connections, to unlimit it pass 'unlimited' (default: 100)
-  - --per-host-connections PER_HOST_CONNECTIONS
-                        Limit the number of connections per host (default: unlimited)
-  - --no-dns-cache        Disable DNS caching (default: False)
-  - --ttl-dns-cache TTL_DNS_CACHE
-                        Time To Live (TTL) for DNS cache entries, in seconds (default: 10)
+  - --timeout                  *Overall timeout for HTTPs request and timeout for DNS query, in seconds (default: 10.0)
+  - --dns-timeout              *Timeout for DNS query, in seconds (ex, 5.0)
+  - --req-timeout              *Overall timeout for HTTPs request, in seconds (ex, 10.0)
+  - --connect-timeout          *Timeout for finding and connecting to the server, including DNS lookup and the initial TCP handshake,
+                               or timeout for waiting for a free connection from the pool if pool connection limits are exceeded, in seconds (default: unlimited)
+  - --sock-connect-timeout     *Timeout for TCP handshake, in seconds (default: unlimited)
+  - --sock-read-timeout        *Timeout for waiting for the server to send back data, in seconds (default: unlimited)
+  - --keepalive-timeout        *Timeout for idle keep-alive connections, in seconds (default: 30.0)
+  - --concurrent-requests      *Number of concurrent HTTPs requests (default: 100)
+  - --max-connections          *Limit the maximum number of concurrent connections, to unlimit it pass 'unlimited' (default: 100)
+  - --per-host-connections     *Limit the number of connections per host (default: unlimited)
+  - --no-dns-cache             *Disable DNS caching (default: False)
+  - --ttl-dns-cache            *Time To Live (TTL) for DNS cache entries, in seconds (default: 10)
 
 **Retry & Backoff:**
-  - --retries RETRIES     HTTPs request retries, and DNS query retries (default: 1)
-  - --dns-retries DNS_RETRIES
-                        DNS query retries (ex, 2)
-  - --req-retries REQ_RETRIES
-                        HTTPs request retries (ex, 3)
-  - --retries-delay RETRIES_DELAY
-                        Set a delay number between retries for HTTPs requests, in seconds (default: 0.0)
-  - --exp-backoff         Exponential Backoff, wait longer after each retry for HTTPs requests, '--retries-delay' option is required (default: False)
+  - --retries                 *HTTPs request retries, and DNS query retries (default: 1)
+  - --dns-retries             *DNS query retries (ex, 2)
+  - --req-retries             *HTTPs request retries (ex, 3)
+  - --retries-delay           *Set a delay number between retries for HTTPs requests, in seconds (default: 0.0)
+  - --exp-backoff             *Exponential Backoff, wait longer after each retry for HTTPs requests, '--retries-delay' option is required (default: False)
 
 **HTTPs Request:**
-  - --random-agents       Use random user-agent for every HTTPs request (default: False)
-  - --random-headers RANDOM_HEADERS
-                        Number of times to send the same request but with random headers based on headers rules file, and with random payload from payloads file if '--random-payload' (default: 3)
-                        NOTE: If 0, only headers that has '"isalways": true' rule will be sent
-  - --headers-rules-file HEADERS_RULES_FILE
-                        Path to JSON file name that contain headers with its rules (default: 'uquix/configs/headers_rules.json')
-  - --custom-headers CUSTOM_HEADERS
-                        Add JSON-formatted headers (ex, '{"header1": "value1", "header2": "value2"}')
-  - --file-custom-headers FILE_CUSTOM_HEADERS
-                        Path to file name that contain headers to add, headers must be JSON-formatted (ex, 'headers.txt')
-  - --no-403headers       Skip headers that has 'is403' rule is true (default: False)
-  - --methods METHODS     HTTPs request methods, comma-separated (default: GET,POST,PUT,HEAD,DELETE)
-  - --add-http            Add 'http://' to all URLs (default: False)
-  - --add-https           Add 'https://' to all URLs (default: False)
-  - --ports PORTS         Ports to append to ALL URLs, comma-separated (ex, 80,443) (default: None)
-  - --ports-http PORTS_HTTP
-                        Ports to append to HTTP URLs, comma-separated (default: 80)
-  - --ports-https PORTS_HTTPS
-                        Ports to append to HTTPS URLs, comma-separated (default: 443)
-  - --real-url            Show the actual request url instead of as it given from the file (default: False)
-  - --final-url           Show the final request url instead of as it given from the file, after following any redirects (default: False)
-  - --params PARAMS       Specify query parameters to append to ALL URLs, JSON-formatted (ex, '{"param1":"value1","param2":"value2"}')
-  - --buffer-size BUFFER_SIZE
-                        Set the size of the read buffer, in bytes (default: 65536)
-  - --disable-redirect    Disable ALL requests to follow redirects (default: False)
-  - --disable-redirect-http
-                        Disable only HTTP requests to follow redirects (default: False)
-  - --disable-redirect-https
-                        Disable only HTTPS requests to follow redirects (default: False)
-  - --max-redirects MAX_REDIRECTS
-                        Limit the number of maximum redirects to follow for ALL requests (default: 10)
-  - --max-redirects-http MAX_REDIRECTS_HTTP
-                        Limit the number of maximum redirects to follow for only HTTP requests (ex, 5)
-  - --max-redirects-https MAX_REDIRECTS_HTTPS
-                        Limit the number of maximum redirects to follow for only HTTPS requests (ex, 5)
-  - --no-ujson            Use JSON instead of UltraJSON (ujson) (default: False)
+  - --random-agents           *Use random user-agent for every HTTPs request (default: False)
+  - --random-headers          *Number of times to send the same request but with random headers based on headers rules file, and with random payload from payloads file if
+                              '--random-payload' (default: 3)
+                              NOTE: If 0, only headers that has '"isalways": true' rule will be sent
+  - --headers-rules-file      *Path to JSON file name that contain headers with its rules (default: 'uquix/configs/headers_rules.json')
+  - --custom-headers          *Add JSON-formatted headers (ex, '{"header1": "value1", "header2": "value2"}')
+  - --file-custom-headers     *Path to file name that contain headers to add, headers must be JSON-formatted (ex, 'headers.txt')
+  - --no-403headers           *Skip headers that has 'is403' rule is true (default: False)
+  - --methods                 *HTTPs request methods, comma-separated (default: GET,POST,PUT,HEAD,DELETE)
+  - --add-http                *Add 'http://' to all URLs (default: False)
+  - --add-https               *Add 'https://' to all URLs (default: False)
+  - --ports PORTS             *Ports to append to ALL URLs, comma-separated (ex, 80,443) (default: None)
+  - --ports-http              *Ports to append to HTTP URLs, comma-separated (default: 80)
+  - --ports-https             *Ports to append to HTTPS URLs, comma-separated (default: 443)
+  - --real-url                *Show the actual request url instead of as it given from the file (default: False)
+  - --final-url               *Show the final request url instead of as it given from the file, after following any redirects (default: False)
+  - --params                  *Specify query parameters to append to ALL URLs, JSON-formatted (ex, '{"param1":"value1","param2":"value2"}')
+  - --buffer-size             *Set the size of the read buffer, in bytes (default: 65536)
+  - --disable-redirect        *Disable ALL requests to follow redirects (default: False)
+  - --disable-redirect-http   *Disable only HTTP requests to follow redirects (default: False)
+  - --disable-redirect-https  *Disable only HTTPS requests to follow redirects (default: False)
+  - --max-redirects           *Limit the number of maximum redirects to follow for ALL requests (default: 10)
+  - --max-redirects-http      *Limit the number of maximum redirects to follow for only HTTP requests (ex, 5)
+  - --max-redirects-https     *Limit the number of maximum redirects to follow for only HTTPS requests (ex, 5)
+  - --no-ujson                *Use JSON instead of UltraJSON (ujson) (default: False)
 
 **Data/Payload:**
-  - --random-payload      Enable to select one random payload for each request from 'uquix/configs/random_payloads.txt' (default: False)
-  - --payloads-file PAYLOADS_FILE
-                        Path to file name that contain payloads, one random payload will be picked randomly for each request, payloads must separated by '\n===\n', if '--random-payload' (default: 'uquix/configs/random_payloads.txt')
-  - --data-methods DATA_METHODS
-                        Specify the request methods will include data/payload in request, comma-separated (ex, 'post,put,patch') (default: '--methods')
-  - --data DATA           Send data/payload in the request body to ALL requests (ex, 'anykey=anyvalue&anything=anythingtoo')
-  - --file-data FILE_DATA
-                        Path to file name that contain data/payload to send in the request body to ALL requests (ex, '/path/to/anydata.bin')
-  - --json-data JSON_DATA
-                        Send JSON-formatted data/payload in the request body to ALL requests (ex, '{"key": "value", "key2": "value2"}')
-  - --file-json-data FILE_JSON_DATA
-                        Path to file name that contain JSON-formatted data/payload to send in the request body to ALL requests (ex, '/path/to/data.json')
-  - --data-encode-type DATA_ENCODE_TYPE
-                        Specify data encoding type for ['--data', '--json-data', '--file-json-data'] (default: 'utf-8')
-  - --no-data-saving      Do NOT save requests data/payload to '--output-file' (default: False)
+  - --random-payload     *Enable to select one random payload for each request from 'uquix/configs/random_payloads.txt' (default: False)
+  - --payloads-file      *Path to file name that contain payloads, one random payload will be picked randomly for each request, payloads must separated by '\n===\n', if
+                         '--random-payload' (default: 'uquix/configs/random_payloads.txt')
+  - --data-methods       *Specify the request methods will include data/payload in request, comma-separated (ex, 'post,put,patch') (default: '--methods')
+  - --data               *Send data/payload in the request body to ALL requests (ex, 'anykey=anyvalue&anything=anythingtoo')
+  - --file-data          *Path to file name that contain data/payload to send in the request body to ALL requests (ex, '/path/to/anydata.bin')
+  - --json-data          *Send JSON-formatted data/payload in the request body to ALL requests (ex, '{"key": "value", "key2": "value2"}')
+  - --file-json-data     *Path to file name that contain JSON-formatted data/payload to send in the request body to ALL requests (ex, '/path/to/data.json')
+  - --data-encode-type   *Specify data encoding type for ['--data', '--json-data', '--file-json-data'] (default: 'utf-8')
+  - --no-data-saving     *Do NOT save requests data/payload to '--output-file' (default: False)
 
 **Proxy & Binding:**
-  - --proxy PROXY         Use a proxy server for HTTPs requests (ex, 'http://user:pass@127.0.0.1:8080')
-  - --socks-proxy SOCKS_PROXY
-                        Use a SOCKS proxy server for HTTPs requests (ex, 'socks5://user:pass@127.0.0.1:9050')
-  - --route-socks-first   If both proxies are used, then route requests through SOCKS-PROXY first (default: False)
-  - --no-rdns             Do NOT resolve DNS through SOCKS proxy, resolve DNS locally instead (default: False)
-  - --bind BIND           Set 'IP:PORT' to bind outgoing connections to. If port is '0' then the system will choose an available port (ex, '192.168.1.1:8080')
+  - --proxy              *Use a proxy server for HTTPs requests (ex, 'http://user:pass@127.0.0.1:8080')
+  - --socks-proxy        *Use a SOCKS proxy server for HTTPs requests (ex, 'socks5://user:pass@127.0.0.1:9050')
+  - --route-socks-first  *If both proxies are used, then route requests through SOCKS-PROXY first (default: False)
+  - --no-rdns            *Do NOT resolve DNS through SOCKS proxy, resolve DNS locally instead (default: False)
+  - --bind               *Set 'IP:PORT' to bind outgoing connections to. If port is '0' then the system will choose an available port (ex, '192.168.1.1:8080')
 
 **Cookies & Authentication:**
-  - --cookies COOKIES     Set a cookies to be sent with ALL requests, semicolon-separated (ex, 'cookie1=value1;cookie2=value2')
-  - --cookies-file COOKIES_FILE
-                        Path to the file name that contain cookies to be sent with ALL requests (ex, 'mycookies.txt')
-                        NOTE: cookies format in the file must be like this: 'cookie1=value1;cookie2=value2'
-  - --specific-cookies SPECIFIC_COOKIES
-                        Set cookies for a specific domains (ex, 'http://site1.com;cookie1=value1,cookie2=value2|https://site2.com;cookie3=value3')
-  - --specific-cookies-file SPECIFIC_COOKIES_FILE
-                        Path to the file name that contain cookies for a specific domains (ex, 'mycookies.txt')
-                        NOTE: cookies format in the file must be like this: 'http://site1.com;cookie1=value1,cookie2=value2|https://site2.com;cookie3=value3'
-  - --allow-unsafe-cookies
-                        Allow cross-domain cookies (default: False)
-  - --ignore-cookies      Disable cookies handling, no cookies will be stored or sent with requests (default: False)
-  - --auth AUTH           Set USERNAME:PASSWORD for basic authentication for all HTTPs requests (ex, 'testuser:anypass123')
-                        NOTE: If some requests don't require authentication, then using this option might cause errors.
-  - --auth-file AUTH_FILE
-                        Path to the file name that contain USERNAME:PASSWORD for basic authentication for all HTTPs requests (ex, 'creds.txt')
-                        NOTE: If some requests don't require authentication, then using this option might cause errors.
+  - --cookies                 *Set a cookies to be sent with ALL requests, semicolon-separated (ex, 'cookie1=value1;cookie2=value2')
+  - --cookies-file            *Path to the file name that contain cookies to be sent with ALL requests (ex, 'mycookies.txt')
+                              NOTE: cookies format in the file must be like this: 'cookie1=value1;cookie2=value2'
+  - --specific-cookies        *Set cookies for a specific domains (ex, 'http://site1.com;cookie1=value1,cookie2=value2|https://site2.com;cookie3=value3')
+  - --specific-cookies-file   *Path to the file name that contain cookies for a specific domains (ex, 'mycookies.txt')
+                              NOTE: cookies format in the file must be like this: 'http://site1.com;cookie1=value1,cookie2=value2|https://site2.com;cookie3=value3'
+  - --allow-unsafe-cookies    *Allow cross-domain cookies (default: False)
+  - --ignore-cookies          *Disable cookies handling, no cookies will be stored or sent with requests (default: False)
+  - --auth                    *Set USERNAME:PASSWORD for basic authentication for all HTTPs requests (ex, 'testuser:anypass123')
+                              NOTE: If some requests don't require authentication, then using this option might cause errors.
+  - --auth-file               *Path to the file name that contain USERNAME:PASSWORD for basic authentication for all HTTPs requests (ex, 'creds.txt')
+                              NOTE: If some requests don't require authentication, then using this option might cause errors.
 
 **SSL/TLS:**
-  - --no-ssl              Disable SSL certificate verification (default: False)
-  - --ssl-cert SSL_CERT   Path to the client certificate file (ex, 'client.crt')
-  - --ssl-key SSL_KEY     Path to the client private key file (ex, 'client.key')
-  - --ca-cert CA_CERT     Path to the custom CA certificate file (ex, 'ca.crt')
-  - --fingerprint FINGERPRINT
-                        SSL fingerprint in hex format (ex, '2a63729dc68....')
-  - --fingerprint-file FINGERPRINT_FILE
-                        Path to a file name containing the SSL fingerprint in hex format (ex, 'fingerprint.txt')
+  - --no-ssl              *Disable SSL certificate verification (default: False)
+  - --ssl-cert            *Path to the client certificate file (ex, 'client.crt')
+  - --ssl-key             *Path to the client private key file (ex, 'client.key')
+  - --ca-cert             *Path to the custom CA certificate file (ex, 'ca.crt')
+  - --fingerprint         *SSL fingerprint in hex format (ex, '2a63729dc68....')
+  - --fingerprint-file    *Path to a file name containing the SSL fingerprint in hex format (ex, 'fingerprint.txt')
 
 **Filtering & Analysing:**
-  - --only ONLY           Show only responses with specific status code, comma-separated (ex, 200,201,403)
-  - --skip SKIP           Skip responses with specific status code, comma-separated (ex, 404,501)
-  - --only-2xx            Show only responses with 2xx status code (default: False)
-  - --only-3xx            Show only responses with 3xx status code (default: False)
-  - --only-4xx            Show only responses with 4xx status code (default: False)
-  - --only-5xx            Show only responses with 5xx status code (default: False)
-  - --less-400            Show only responses with less than 400 status code (default: False)
-  - --no-empty-content    Skip responses with 0 content-bytes (default: False)
-  - --max-content MAX_CONTENT
-                        Only show responses with content size less than or equal to the specified number of bytes (ex, 1000)
-  - --min-content MIN_CONTENT
-                        Only show responses with content size greater than or equal to the specified number of bytes (ex, 50)
-  - --no-content-size     Do NOT show response content size (default: False)
-  - --no-payload-size     Do NOT show payload size, if --random-payload or data given (default: False)
-  - --no-request-headers  Do NOT show the number of request headers (default: False)
-  - --no-request-headers-size
-                        Do NOT show the size of request headers (default: False)
-  - --no-response-headers
-                        Do NOT show the number of response headers (default: False)
-  - --no-response-headers-size
-                        Do NOT show the size of response headers (default: False)
-  - --no-time             Do NOT show request duration, the time that request took to be processed (default: False)
-  - --no-title            Do NOT show response title (default: False)
-  - --no-response-headers-saving
-                        Do NOT save response headers in '--output-file', if '--output-file' (default: False)
-  - --no-analyze          Disable analyzing responses (default: False)
-  - --analyze-by ANALYZE_BY
-                        Specify responses analyzing logic using AND/OR operators (default: read 'uquix/docs/analysis_guide.md')
-                        NOTE: Analyzing colors will be based on given logic
-                        NOTE: Sorting conditions is important
+  - --only                         *Show only responses with specific status code, comma-separated (ex, 200,201,403)
+  - --skip                         *Skip responses with specific status code, comma-separated (ex, 404,501)
+  - --only-2xx                     *Show only responses with 2xx status code (default: False)
+  - --only-3xx                     *Show only responses with 3xx status code (default: False)
+  - --only-4xx                     *Show only responses with 4xx status code (default: False)
+  - --only-5xx                     *Show only responses with 5xx status code (default: False)
+  - --less-400                     *Show only responses with less than 400 status code (default: False)
+  - --no-empty-content             *Skip responses with 0 content-bytes (default: False)
+  - --max-content                  *Only show responses with content size less than or equal to the specified number of bytes (ex, 1000)
+  - --min-content                  *Only show responses with content size greater than or equal to the specified number of bytes (ex, 50)
+  - --no-content-size              *Do NOT show response content size (default: False)
+  - --no-payload-size              *Do NOT show payload size, if --random-payload or data given (default: False)
+  - --no-request-headers           *Do NOT show the number of request headers (default: False)
+  - --no-request-headers-size      *Do NOT show the size of request headers (default: False)
+  - --no-response-headers          *Do NOT show the number of response headers (default: False)
+  - --no-response-headers-size     *Do NOT show the size of response headers (default: False)
+  - --no-time                      *Do NOT show request duration, the time that request took to be processed (default: False)
+  - --no-title                     *Do NOT show response title (default: False)
+  - --no-response-headers-saving   *Do NOT save response headers in '--output-file', if '--output-file' (default: False)
+  - --no-analyze                   *Disable analyzing responses (default: False)
+  - --analyze-by                   *Specify responses analyzing logic using AND/OR operators (default: read 'uquix/docs/analysis_guide.md')
+                                   NOTE: Analyzing colors will be based on given logic
+                                   NOTE: Sorting conditions is important
 
 **Output Saving:**
-  - --output-file OUTPUT_FILE
-                        Output file name to save requests with its info or discovered subdomains (ex, 'newurls.txt')
-  - --output-sorted OUTPUT_SORTED
-                        Output file name to save requests with its info but sorted by url, if --output-file (default: "sorted_'--output-file'")
-  - --output-analyze OUTPUT_ANALYZE
-                        Output file name to save responses analyzing results, if --output-file (default: "analyze_'--output-file'")
-  - --html-dir HTML_DIR   Output directory name to save every response as '.html' file (ex, 'testedurls')
+  - --output-file      *Output file name to save requests with its info or discovered subdomains (ex, 'newurls.txt')
+  - --output-sorted    *Output file name to save requests with its info but sorted by url, if --output-file (default: "sorted_'--output-file'")
+  - --output-analyze   *Output file name to save responses analyzing results, if --output-file (default: "analyze_'--output-file'")
+  - --html-dir         *Output directory name to save every response as '.html' file (ex, 'testedurls')
 
 **Progress & Other:**
-  - --disable-detailed-progress
-                        Disable showing the progress of HTTP URLs and HTTPS URLs, only show ALL URLs progress (default: False)
-  - --disable-progress    Disable the progress line entirely (default: False)
-  - --show-errs           Show all unexpected errors, like when sending a huge size of headers (default: False)
-  - --no-colors           Suppress output coloring (default: False)
-  - --silence             Enable quiet mode, but keeps progress (default: False)
-  - --no-history          Do NOT store current arguments to 'uquix/history.log' file (default: False)
-  - --no-max-speed        Reduce async concurrency for lower CPU usage (default: False)
-  - --version             Show current UQUIX version
+  - --disable-detailed-progress   *Disable showing the progress of HTTP URLs and HTTPS URLs, only show ALL URLs progress (default: False)
+  - --disable-progress            *Disable the progress line entirely (default: False)
+  - --show-errs                   *Show all unexpected errors, like when sending a huge size of headers (default: False)
+  - --no-colors                   *Suppress output coloring (default: False)
+  - --silence                     *Enable quiet mode, but keeps progress (default: False)
+  - --no-history                  *Do NOT store current arguments to 'uquix/history.log' file (default: False)
+  - --no-max-speed                *Reduce async concurrency for lower CPU usage (default: False)
+  - --version                     *Show current UQUIX version
 
 </details>
 
