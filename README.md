@@ -257,11 +257,6 @@ uquix --help
         - *Example of detailed configs:*
             - `uquix subs-xplore subslist.txt --target-domains target_domains.txt --concurrent-queries 2000 --show-records --timeout 2 --retries 0 --enable-rotate --dns-servers-file resolvers.txt --output-file newsubs_with_A_CNAME.txt --silence`
 
-## 🖼️ Example Screenshot
-
-![Screenshot](UQUIX_example.png)
-
-
 ## 🎥 Example Demo
 *Automating Complex Headers/Payloads Combos with UQUIX* 
 ![UQUIX Example Demo](https://i.imgur.com/MlCau8R.gif)  
