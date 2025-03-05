@@ -263,7 +263,7 @@ uquix --help
 
 
 ## 🎥 Example Demo  
-![UQUIX Example Demo]([img]https://i.imgur.com/MlCau8R.gif[/img])  
+![UQUIX Example Demo](https://i.imgur.com/MlCau8R.gif)  
 *Automating Complex Headers/Payloads Combos with UQUIX* 
 
 ## 📦 Requirements
