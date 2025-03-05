@@ -291,9 +291,7 @@ uquix --help
 
 ################################################################
 
-- By: Abd Almoen Arafa (0.1Arafa)                              
-- Age: 18                                                      
-- Year: 2025
+- By: Abd Almoen Arafa (0.1Arafa)
                                                    
 ## ⚠️🚨 WARNINGS
 
