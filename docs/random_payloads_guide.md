@@ -23,11 +23,5 @@
 
 
 ################################################################
-# By: Abd Almoen Arafa (0.1Arafa)                              #
-# Age: 18                                                      #
-# Year: 2025                                                   #
-#######################################################################
-# WARNING: Please ask for PERMISSIONS before testing any web server.  #
-# Use this tool AT YOUR OWN RISK.                                     #
-# I'm NOT responsible for any unethical action.                       #
-#######################################################################
+- By: Abd Almoen Arafa (0.1Arafa)
+- WARNING: Please ask for PERMISSIONS before testing any web server
