@@ -261,6 +261,11 @@ uquix --help
 
 ![Screenshot](UQUIX_example.png)
 
+
+## 🎥 Example Demo  
+![UQUIX Example Demo](https://imgur.com/3YpkXhc)
+*Click to play the demo video*  
+
 ## 📦 Requirements
     
     Python 3.9+
