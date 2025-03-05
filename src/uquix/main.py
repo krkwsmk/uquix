@@ -1587,8 +1587,8 @@ class MyMainClass:
                 print(f" {self.colors['out']}[OUTPUT]:{self.colors['reset']}") if self.OUTPUT and os.path.exists(self.OUTPUT) or self.OUTPUT_DIR else None
                 if self.OUTPUT and os.path.exists(self.OUTPUT):
                     print(f"\t{self.colors['cols']}[+] All requests with its BASIC INFO are SORTLY saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_SORTED}'{self.colors['reset']}")
-                    print(f"\t{self.colors['cols']}[+] All requests with its ALL INFO are SORTLY saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_DETAILED_SORTED}'{self.colors['reset']}")
-                    print(f"\t{self.colors['cols']}[+] All requests with its ALL INFO are UNSORTLY saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT}'{self.colors['reset']}")
+                    print(f"\t{self.colors['cols']}[+] All requests/responses with its ALL INFO are SORTLY saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_DETAILED_SORTED}'{self.colors['reset']}")
+                    print(f"\t{self.colors['cols']}[+] All requests/responses with its ALL INFO are UNSORTLY saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT}'{self.colors['reset']}")
                     print(f"\t{self.colors['cols']}[+] Analyzing results are saved in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_ANALYZE}'{self.colors['reset']}") if not self.NO_ANALYZE else None
                 print(f"\t{self.colors['cols']}[+] Every response is saved as '.html' file in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_DIR}'{self.colors['reset']} {self.colors['cols']}directory{self.colors['reset']}" if not self.IS_EXIST_DIR else f"\t{self.colors['cols']}[+] Every response is saved as '.html' in{self.colors['reset']} {self.colors['status_2xx']}'{self.OUTPUT_DIR}'{self.colors['reset']} {self.colors['cols']}already exist directory{self.colors['reset']}") if self.OUTPUT_DIR else None
 
