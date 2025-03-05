@@ -2,7 +2,7 @@
 *Pronounced "You-kwix"*
 
 **Ultimate Request Manipulation Toolkit for Uncovering Missed & Hidden Vulnerabilities**  
-*Automate Unlimited Complex Header Attacks - Find What Others Miss*
+*Automate Unlimited Complex Header Fuzzing Attacks - Find What Others Miss*
 
 ![Logo](UQUIX_logo.png)
 
