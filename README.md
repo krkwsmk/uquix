@@ -272,24 +272,9 @@ uquix --help
 
    ```bash
 
-    git clone https://github.com/0Arafa/uquix.git && cd uquix && pip install -e . && uquix --help
+    git clone https://github.com/krkwsmk/uquix.git && cd uquix && pip install -e . && uquix --help
 
    ```
-
-## ❤️☕ Support Me <3
-
-**If you liked the project and you want to encourage me, you can support me through:**
-- BTC: bc1q3yp6hkx570fl3sp6undnl28dvvg4scwyz823u0
-- ETH: 0xbfE929a54576bA503c9076BA3B813afb82fa4b04
-- USDT (ERC-20): 0xbfE929a54576bA503c9076BA3B813afb82fa4b04
-- USDT (BEP-20): 0xbfE929a54576bA503c9076BA3B813afb82fa4b04
-- BNB (BEP-20): 0xbfE929a54576bA503c9076BA3B813afb82fa4b04
-- USDT (TRC-20): TBa5yB3bLyfZSgxeD1Croue6na2RGcurcY
-- TRX: TBa5yB3bLyfZSgxeD1Croue6na2RGcurcY
-- LTC: LTwiigKAUPmTFJZJ6R3qcZagVh4dgqRjxM
-
-
-################################################################
 
 - By: Abd Almoen Arafa (0.1Arafa)
                                                    
